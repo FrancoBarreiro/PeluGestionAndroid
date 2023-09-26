@@ -1,0 +1,36 @@
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .footer-left {
+    flex: 1; /* Ocupa el espacio disponible */
+    text-align: left;
+  }
+  
+  .footer-right {
+    flex: 1; /* Ocupa el espacio disponible */
+    text-align: right;
+  }
+  
+  .text-center button:not(:last-child) {
+    margin-right: 10px;
+  }
+
+  #btnGuardar {
+    background-color: #653c8d;
+    border-color: #653c8d;
+  }
+  #btnGuardar:hover {
+    background-color: #492963;
+  }
+  .btn-secondary {
+    background-color: #bdbdbd;
+    border-color: #b9b9b9;
+  }
+  
+  .btn-secondary:hover {
+    background-color: #dddddd;
+    border-color: #d2d2d2;
+  }
+  

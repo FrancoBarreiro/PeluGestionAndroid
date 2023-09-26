@@ -1,0 +1,32 @@
+<aside id="sidebar" class="sidebar" id="sidebar">
+   <ul class="sidebar-nav" id="sidebar-nav">
+      <li class="nav-item"> <a class="nav-link " routerLink="/" id="titles"> <i class="bi bi-grid"></i> <span>Inicio</span> </a>
+      </li>
+      <li class="nav-item">
+         <a class="nav-link collapsed" data-bs-target="#components-nav" data-bs-toggle="collapse" href="#" id="titles">
+            <i class="bi bi-menu-button-wide"></i><span>Clientes</span><i class="bi bi-chevron-down ms-auto"></i> </a>
+         <ul id="components-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+            <li> <a routerLink="/clientes/registrar" id="subTitle"> <i class="bi bi-circle"></i><span>Registrar cliente</span> </a>
+            </li>
+            <li> <a routerLink="/clientes" id="subTitle"> <i class="bi bi-circle"></i><span>Ver lista clientes</span> </a></li>
+         </ul>
+      </li>
+      <li class="nav-item">
+         <a class="nav-link collapsed" data-bs-target="#tables-nav" data-bs-toggle="collapse" href="#" id="titles"> <i
+               class="bi bi-layout-text-window-reverse"></i><span>Gastos</span><i
+               class="bi bi-chevron-down ms-auto"></i> </a>
+         <ul id="tables-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+            <li> <a routerLink="/gastos/agregar" id="subTitle"> <i class="bi bi-circle"></i><span>Agregar gasto</span> </a></li>
+            <li> <a routerLink="/gastos" id="subTitle"> <i class="bi bi-circle"></i><span>Ver gastos</span> </a></li>
+         </ul>
+      </li>
+      <li class="nav-item">
+         <a class="nav-link collapsed" data-bs-target="#forms-nav" data-bs-toggle="collapse" href="#" id="titles"> <i
+               class="bi bi-journal-text"></i><span>Resultados</span><i class="bi bi-chevron-down ms-auto"></i> </a>
+         <ul id="forms-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+            <li> <a routerLink="/resultados/trabajos" id="subTitle"> <i class="bi bi-circle"></i><span>Ver trabajos</span> </a></li>
+            <li> <a routerLink="/resultados/gastos" id="subTitle"> <i class="bi bi-circle"></i><span>Ver gastos</span> </a></li>
+         </ul>
+      </li>
+   </ul>
+</aside>

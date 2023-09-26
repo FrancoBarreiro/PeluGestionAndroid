@@ -1,0 +1,115 @@
+<head>
+    <link rel="stylesheet" href="customers-list.component.css">
+</head>
+<main id="main" class="main">
+    <div class="pagetitle">
+        <h1>Clientes</h1>
+        <nav>
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a routerLink="/">Inicio</a></li>
+                <li class="breadcrumb-item">Clientes</li>
+                <li class="breadcrumb-item active">Ver lista clientes</li>
+            </ol>
+        </nav>
+    </div>
+    <section class="section">
+        <div _ngcontent-dqv-c37="" class="row">
+            <div _ngcontent-dqv-c37="" class="col-lg-12">
+                <div _ngcontent-dqv-c37="" class="card">
+                    <div _ngcontent-dqv-c37="" class="card-body">
+                        <h5 _ngcontent-dqv-c37="" class="card-title">Clientes</h5>
+                        <div class="dataTable-wrapper dataTable-loading no-footer sortable searchable fixed-columns">
+                            <div class="dataTable-top">
+                                <div class="dataTable-dropdown">
+                                    <label>
+                                        <select class="dataTable-selector" [(ngModel)]="size" name="size"
+                                            (change)="onPageSizeChange()">
+                                            <option value="5">5</option>
+                                            <option value="10">10</option>
+                                            <option value="15">15</option>
+                                            <option value="20">20</option>
+                                            <option value="25">25</option>
+                                        </select>
+                                        Datos por página
+                                    </label>
+                                </div>
+                                <div class="dataTable-search"><input class="dataTable-input" placeholder="Buscar..."
+                                        type="text" [(ngModel)]="nameCustomerToSearch"
+                                        (keyup.enter)="searchCustomerByName()" (blur)="handleBlur()"></div>
+                            </div>
+                            <div class="dataTable-container">
+                                <table _ngcontent-dqv-c37="" class="table datatable dataTable-table">
+                                    <thead _ngcontent-dqv-c37="">
+                                        <tr _ngcontent-dqv-c37="">
+                                            <th _ngcontent-dqv-c37="" scope="col" data-sortable=""
+                                                style="width: 20;">
+                                                <a class="dataTable-sorter">Nombre</a>
+                                            </th>
+                                            <th _ngcontent-dqv-c37="" scope="col" data-sortable=""
+                                                style="width: 10.60118%ñ">
+                                                <a class="dataTable-sorter">Apellido</a>
+                                            </th>
+                                            <th _ngcontent-dqv-c37="" scope="col" data-sortable="" style="width: 10;">
+                                                <a class="dataTable-sorter">Celular</a>
+                                            </th>
+                                            <th _ngcontent-dqv-c37="" scope="col" data-sortable="" style="width: 19;">
+                                                <a class="dataTable-sorter">Acciones</a>
+                                            </th>
+                                        </tr>
+                                    </thead>
+                                    <tbody _ngcontent-dqv-c37="">
+                                        <tr _ngcontent-dqv-c37="" *ngFor="let customer of customersList">
+                                            <td _ngcontent-dqv-c37="">{{customer.name}}</td>
+                                            <td _ngcontent-dqv-c37="">{{customer.surname}}</td>
+                                            <td _ngcontent-dqv-c37="">{{customer.cellphone}}</td>
+                                            <td _ngcontent-dqv-c37="">
+                                                <div class="d-flex justify-content-center">
+                                                    <button type="button" class="btn btn-light rounded-pill"
+                                                        id="deleteCustomer"
+                                                        (click)="deleteCustomer(customer.id)" title="Eliminar cliente"><i
+                                                            _ngcontent-iji-c29="" class="bi bi-trash"
+                                                            id="iconTrash"></i></button>
+                                                    <button type="button" class="btn btn-light rounded-pill" id="addJob"
+                                                        (click)="redirectToAddJob(customer.id)" title="Agregar trabajo"><i
+                                                            _ngcontent-iji-c29="" class="bi bi-file-earmark-plus"
+                                                            id="iconAddJob"></i></button>
+                                                    <button type="button" class="btn btn-light rounded-pill"
+                                                        id="infoCustomer"
+                                                        (click)="redirectToDetails(customer.id)" title="Ver detalles"><i
+                                                            _ngcontent-iji-c29="" class="bi bi-info-circle"
+                                                            id="iconInfo"></i></button>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="pagination-container">
+                                <nav aria-label="...">
+                                    <ul class="pagination">
+                                        <li class="page-item" [ngClass]="{ 'disabled': isFirstPage }">
+                                            <a class="page-link" tabindex="-1" aria-disabled="true"
+                                                (click)="goToPreviousPage()">Anterior</a>
+                                        </li>
+                                        <li class="page-item" *ngFor="let page of pageRange">
+                                            <a class="page-link" (click)="goToPage(page)">{{ page }}</a>
+                                        </li>
+                                        <li class="page-item" [ngClass]="{ 'disabled': currentPage === totalPages }">
+                                            <a class="page-link" (click)="goToNextPage()">Siguiente</a>
+                                        </li>
+                                    </ul>
+                                </nav>
+                            </div>
+                            <div class="dataTable-bottom">
+                                <div class="dataTable-info">Mostrando {{ page + 1 }} de {{ totalPages }} páginas</div>
+                                <nav class="dataTable-pagination">
+                                    <ul class="dataTable-pagination-list"></ul>
+                                </nav>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
