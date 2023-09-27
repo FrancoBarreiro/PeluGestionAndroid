@@ -18,7 +18,7 @@ public class Job {
     private List<SubJob> subJobs;
     private long idJob;
     @NonNull
-    private long idClient;
+    private Long idClient;
     @NonNull
     @NotBlank(message = "El titulo no puede estar vacío")
     private String jobTitle;
@@ -26,7 +26,7 @@ public class Job {
     @NonNull
     @NotBlank
     @Positive(message = "Total debe ser mayor a 0.")
-    private double totalAmount;
+    private Double totalAmount;
     @NonNull
     private String date;
     private String customerName;

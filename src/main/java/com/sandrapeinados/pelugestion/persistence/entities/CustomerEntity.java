@@ -3,6 +3,7 @@ package com.sandrapeinados.pelugestion.persistence.entities;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 import java.util.List;
 
@@ -10,6 +11,7 @@ import java.util.List;
 @AllArgsConstructor
 @NoArgsConstructor
 @PrimaryKeyJoinColumn(referencedColumnName = "person_id")
+@EqualsAndHashCode(callSuper = false)
 @Entity
 @Table(name = "customers")
 public class CustomerEntity extends PersonEntity {

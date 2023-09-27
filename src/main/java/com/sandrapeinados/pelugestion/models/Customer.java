@@ -1,9 +1,8 @@
 package com.sandrapeinados.pelugestion.models;
 
-import com.sandrapeinados.pelugestion.persistence.entities.JobEntity;
-import jakarta.validation.constraints.NotBlank;
 import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 
 import java.util.List;
@@ -11,6 +10,7 @@ import java.util.List;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
+@EqualsAndHashCode(callSuper = false)
 public class Customer extends Person {
 
     private List<Job> jobs;
